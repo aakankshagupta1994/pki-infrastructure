@@ -116,9 +116,57 @@ Steps:
 ![image](https://user-images.githubusercontent.com/89236239/142757500-e83b121d-147f-43d8-a1e3-dbfbe51a9851.png)
 
 
-    
-    
-   
+ Testing 
+ -------
+ 
+ Tested TSL certificate on node.js server using ngnix
+ 
+ 1. Install nginx
+ 
+ ```
+ sudo chown -R 'username here' /usr/local
+ brew link pcre
+ brew install nginx
+ sudo nginx
+ ```
+ 
+2. Setting Up a Node.js Server
+```
+mkdir node-demo && cd node-demo
+npm init -y
+npm i express
+```
+
+3. Created server.js file with below contents
+
+![image](https://user-images.githubusercontent.com/89236239/142793016-25c9fe8c-d68f-4056-9620-2fe640bf3206.png)
+
+4. Configuring NGINX - Create default file if doesnot exist
+  
+  ```
+  sudo nano /etc/nginx/sites-available/default
+  ```
+  
+  Edit below details in default file
+  
+ ![image](https://user-images.githubusercontent.com/89236239/142792820-80a9d697-cb87-437d-97cb-a22362016de4.png)
+
+5. Restart server
+
+  ```
+  sudo nginx -s stop && sudo nginx
+  ```
+  
+
+Results: 
+![image](https://user-images.githubusercontent.com/89236239/142793197-35cd2fdc-6451-40be-a8ee-32d98f256f68.png)
+
+
+References
+-------
+1. https://pki-tutorial.readthedocs.io/en/latest/simple/
+2. https://www.sitepoint.com/configuring-nginx-ssl-node-js/
+
 
 
 
